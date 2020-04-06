@@ -1,0 +1,31 @@
+<nav *ngIf="isAuthenticated()"
+     class="navbar navbar-expand-md fixed-top bg-white">
+  <a class="navbar-brand"
+     href="#"
+     [routerLink]="['/']">Clientes</a>
+  <button class="navbar-toggler collapsed"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse"
+       id="navbarCollapse"
+       style="">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <button (click)="logout()"
+                class="btn btn-primary">Sair
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid"
+     [style.margin-top.rem]="'4.5'">
+  <router-outlet></router-outlet>
+</div>
